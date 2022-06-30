@@ -6,6 +6,7 @@ const fs = require('fs')
 let user = JSON.parse(fs.readFileSync('task2.json'))
 // console.log(file)
 
+/*option one*/
 
 function uniqueFunc1() {
     let unique1 = [];
@@ -15,4 +16,10 @@ function uniqueFunc1() {
     return unique1.map(el => JSON.parse(el))
 }
 
-console.log(uniqueFunc1())
+// console.log(uniqueFunc1())
+
+
+/*option two*/
+
+let unique = Array.from(new Set(user.map((item) => JSON.stringify(item)))).map((item) => JSON.parse(item))
+console.log(unique)
